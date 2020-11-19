@@ -1630,7 +1630,8 @@ __webpack_require__.r(__webpack_exports__);
 
 window.Echo = new laravel_echo__WEBPACK_IMPORTED_MODULE_0__["default"]({
   broadcaster: 'socket.io',
-  host: window.location.hostname + ":" + window.laravel_echo_port
+  host: window.location.hostname + ":" + window.laravel_echo_port,
+  transports: ['websocket', 'polling', 'flashsocket']
 });
 
 /***/ }),

@@ -30,3 +30,7 @@ Route::get('/fire', function () {
     event(new \App\Events\SendMessage());
     return 'ok';
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
