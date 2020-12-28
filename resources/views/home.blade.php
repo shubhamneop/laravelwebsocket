@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <!-- {{ __('You are logged in!') }} -->
                     <div id="notification" style="float:left;"></div>
                     <div id="private" style="float:right;"></div>
                 </div>
