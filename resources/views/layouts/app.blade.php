@@ -15,7 +15,8 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -95,10 +96,21 @@
             .listen('TestEvent', e => {
                 showNotification(e.title);
             });
+            var j=0;
         Echo.channel('new-user')
           .listen('NewUser', (data) => {
+              j++;
               showNotification(data.title);
-          });    
+              $("#newuser").append('<div class="alert alert-success">'+j+'.'+data.title+'</div>');
+
+          }); 
+          var d=0; 
+          Echo.private('demo')
+            .listen('PrivateTest', e => {
+                d++;
+                console.log(e)
+                $("#private").append('<div class="alert alert-success">'+d+'.'+e.title+'</div>');
+            })  
 
             function showNotification(msg) {
                 if (!("Notification" in window)) {

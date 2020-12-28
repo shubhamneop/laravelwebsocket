@@ -28,6 +28,7 @@ Route::get('/test', function () {
 Route::get('/fire', function () {
     event(new \App\Events\TestEvent());
     event(new \App\Events\SendMessage());
+    event(new \App\Events\PrivateTest());
     return 'ok';
 });
 

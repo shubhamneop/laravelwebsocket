@@ -1,6 +1,6 @@
 {
 	"authHost": "http://localhost",
-	"authEndpoint": "/broadcasting/auth",
+	"authEndpoint": ":8000/broadcasting/auth",
 	"clients": [],
 	"database": "redis",
 	"databaseConfig": {
@@ -11,7 +11,7 @@
 	},
 	"devMode": true,
 	"host": null,
-	"port": "6002",
+	"port": "6001",
 	"protocol": "http",
 	"socketio": {},
 	"secureOptions": 67108864,
